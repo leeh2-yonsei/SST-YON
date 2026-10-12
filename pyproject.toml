@@ -1,0 +1,32 @@
+[project]
+name = "sst-yon"
+version = "0.1.0"
+description = "Download videos, convert media to MP3, and transcribe audio locally"
+readme = "README.md"
+authors = [
+    { name = "leeh2-yonsei", email = "leeh2@yonsei.ac.kr" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    # faster-whisper 1.2.1 uses metadata_errors, removed in PyAV 19.
+    "av>=11,<19",
+    "faster-whisper>=1.2.1",
+    "rich>=13.9",
+    "yt-dlp>=2026.8.19",
+]
+
+[project.optional-dependencies]
+cuda = [
+    "nvidia-cublas-cu12>=12.4,<13; sys_platform == 'win32'",
+    "nvidia-cudnn-cu12>=9,<10; sys_platform == 'win32'",
+]
+
+[project.scripts]
+download = "sst_yon.download:main"
+to-mp3 = "sst_yon.convert:main"
+transcribe = "sst_yon.transcribe:main"
+pipeline = "sst_yon.pipeline:main"
+
+[build-system]
+requires = ["uv_build>=0.12.3,<0.13.0"]
+build-backend = "uv_build"

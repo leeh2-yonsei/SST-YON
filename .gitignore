@@ -1,0 +1,54 @@
+# Python environments and bytecode
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+
+# Package and model caches
+.uv-cache/
+.cache/
+
+# Test, coverage, and lint caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tox/
+.nox/
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+
+# Build artifacts
+/build/
+/dist/
+*.egg-info/
+.eggs/
+
+# Local secrets and browser cookies
+.env
+.env.*
+!.env.example
+!.env.*.example
+cookie/
+asset/cookie/
+cookies*.txt
+*.cookies.txt
+
+# Downloaded media and generated transcripts
+/asset/mp4/
+/asset/mp3/
+/asset/txt/
+
+# Local editor settings, OS metadata, and temporary files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.log
+*.tmp
+*.swp
+*.swo
+*~
